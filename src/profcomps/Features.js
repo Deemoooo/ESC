@@ -28,6 +28,7 @@ export default class Features extends React.Component {
           <Row className="show-grid">
             <br />
             <br />
+            <br />
             <Col sm={2} md={4}>
             <MuiThemeProvider>
               <Feedbackimage />
