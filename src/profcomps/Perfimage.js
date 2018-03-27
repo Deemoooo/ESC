@@ -2,6 +2,7 @@ import React from 'react';
 import {Card, CardHeader} from 'material-ui';
 import {Button, Grid, Row, Col, Image} from "react-bootstrap";
 import Background from "./performance.png";
+import './Perfimage';
 
 export default class Perfimage extends React.Component {
 

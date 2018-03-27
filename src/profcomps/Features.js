@@ -6,12 +6,13 @@ import Feedbackimage from './Feedbackimage';
 import Perfimage from './Perfimage';
 import Quizimage from './Quizimage';
 import Askimage from '../studcomps/Askimage';
+import './Features.css';
 
 export default class Features extends React.Component {
   
   constructor(props) {
     super(props);
-    this.authorize = "student"; //should get from firebase after login
+    this.authorize = "prof"; //should get from firebase after login
     this.name = "A";  // should get from firebase after login
     this.state = {
       text: "Please select a class"
