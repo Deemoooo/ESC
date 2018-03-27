@@ -68,15 +68,12 @@ export default class Login extends React.Component {
 				    			<Grid>
 				    			<Grid>
 				    			<Col md={2} >
-				    				<Link to="/profcomps"><Button 
+
+				    				<Link to="/comps" authorize={['prof']}><Button 
 				    				bsStyle="info" block>
-				    				Prof</Button></Link>
+				    				Login</Button></Link>
 				    			</Col>
-				    			<Col md={2}>
-				    				<Link to="/studcomps"><Button
-				    				bsStyle="info" block>
-				    				Student</Button></Link>
-				    			</Col>
+				    		
 				    			</Grid>
 				    			</Grid>
 				    		</CardActions>
