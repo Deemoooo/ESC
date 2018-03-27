@@ -17,11 +17,11 @@ ReactDOM.render(
   <Router history={hashHistory}>
     
       <Route path="/" component={Side}></Route>
-      <Route path="/profcomps" component={Prof} name="ssd"></Route>
-      <Route path="/studcomps" component={Student}></Route>
-      <Route path="/profcomps/Quizzes" component={Quizzes}></Route>
-      <Route path="/profcomps/Feedback" component={Feedback}></Route>
-      <Route path="/profcomps/Analysis" component={Analysis}></Route>
+      <Route path="/comps" component={Prof} name="ssd"></Route>
+      <Route path="/comps" component={Student}></Route>
+      <Route path="/comps/Quizzes" component={Quizzes}></Route>
+      <Route path="/comps/Feedback" component={Feedback}></Route>
+      <Route path="/comps/Analysis" component={Analysis}></Route>
   </Router>,
 
   document.getElementById('root')
