@@ -13,7 +13,7 @@ export default class Side extends React.Component {
   
   render() {
     return (
-      <div>
+      <div classname = "Side">
         <MuiThemeProvider>
         	<Login/>
         </MuiThemeProvider>

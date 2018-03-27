@@ -1,18 +1,26 @@
 import React from 'react';
 import {Link} from "react-router";
-import {Row, Col, Grid, Button, SplitButton, DropdownButton, MenuItem} from "react-bootstrap";
+import {Row, Col, Grid, Button, SplitButton, DropdownButton, MenuItem, Image} from "react-bootstrap";
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import {Card, CardHeader} from 'material-ui';
+
 import Feedbackimage from './Feedbackimage';
 import Perfimage from './Perfimage';
 import Quizimage from './Quizimage';
 import Askimage from '../studcomps/Askimage';
+
+import quiz from "./quiz.png";
+import perf from "./performance.png";
+import feedback from "./feedback.png";
+import question from "../studcomps/question.png";
+
 import './Features.css';
 
 export default class Features extends React.Component {
   
   constructor(props) {
     super(props);
-    this.authorize = "prof"; //should get from firebase after login
+    this.authorize = "student"; //should get from firebase after login
     this.name = "A";  // should get from firebase after login
     this.state = {
       text: "Please select a class"
@@ -33,6 +41,7 @@ export default class Features extends React.Component {
           <Row className="show-grid">
             <br />
             <Col sm={2} md={11}>
+              <br />
               <h1>Hello Prof {this.name}</h1>
             </Col>
             <Col sm={2} md={1}>
@@ -46,52 +55,93 @@ export default class Features extends React.Component {
           <Row className="show-grid">
             <br />
             <br />
-            <br />
             <Col sm={2} md={4}>
-            <MuiThemeProvider>
-              <Feedbackimage />
-            </MuiThemeProvider>
-            <br/>
-            <Grid>
-            <Grid>
-            <Grid>
-            <Col sm={3}>
-              <Link to="/comps/Feedback"><Button bsSize="large" bsStyle="success" block>Review Feedback</Button></Link>
-            </Col>
-            </Grid>
-            </Grid>
-            </Grid>
-            </Col>
-            <Col sm={2} md={4}>
-            <MuiThemeProvider>
-              <Perfimage />
-            </MuiThemeProvider>
-            <br/>
-            <Grid>
-            <Grid>
-            <Grid>
-            <Col sm={3}>
-              <Link to="/comps/Analysis"><Button bsSize="large" bsStyle="success" block>Students Performance</Button></Link>
-            </Col>
-            </Grid>
-            </Grid>
-            </Grid>
+              <MuiThemeProvider>
+                <br />
+                <br />
+                <br /> 
+                <Row>
+                  <Col md={12}>
+                    <Card>
+                        <CardHeader
+                            title="Review Feedback"
+                            subtitle="Check the feedback from students  "
+                        />
+                        <br/>
+                        <Col>
+                          <Col sm={2} />
+                          <Image src= {feedback} rounded />
+                        </Col>
+                        <br />
+                        <br />
+                    </Card>
+                  </Col>
+                </Row>
+              </MuiThemeProvider>
+              <br/>
+              <Col sm={2} />
+              <Col sm={8} className="Quizimage">
+                <Link to="/comps/Feedback"><Button bsSize="large" bsStyle="success" block>Review Feedback</Button></Link>
+              </Col>           
             </Col>
             <Col sm={2} md={4}>
-            <MuiThemeProvider>
-              <Quizimage />
-            </MuiThemeProvider>
-            <br />
-            <Grid>
-            <Grid>
-            <Grid>
-            <Col sm={3}>
-              <Link to="/comps/Quizzes"><Button bsSize="large" bsStyle="success" block>Push Quizzes</Button></Link>
+              <MuiThemeProvider>
+                <br />
+                <br />
+                <br />
+                <Row>
+                  <Col md={12}>
+                    <Card>
+                      <CardHeader
+                          title="Performance analysis"
+                          subtitle="Analyze student's performance"
+                      />
+                      <br/>
+                      <Col>
+                        <Col sm={2} />
+                        <Image src= {perf} rounded />
+                      </Col>
+                      <br />
+                      <br />
+                    </Card>
+                  </Col>
+                </Row>
+              </MuiThemeProvider>
+              <br/>
+              <Col sm={2} />
+              <Col sm={8} className="Quizimage">
+                <Link to="/comps/Analysis"><Button bsSize="large" bsStyle="success" block>Student Performance</Button></Link>
+              </Col>           
             </Col>
-            </Grid>
-            </Grid>
-            </Grid>
-            </Col>
+            <Col sm={2} md={4}>
+              <MuiThemeProvider>
+                <br />
+                <br />
+                <br />
+                <Row>
+                  <Col md={12}>
+                    <Card>
+                      <CardHeader
+                          title="Push Quizzes"
+                          subtitle="Upload a quiz to students"
+                      />
+                      <br/>
+                      <Col>
+                        <Col sm={2} />
+                        <Image src= {quiz} rounded />
+                      </Col>
+                      <br />
+                      <br />
+                    </Card>
+                  </Col>
+                </Row>
+              </MuiThemeProvider>
+              <br/>
+              <Col sm={2} />
+              <Col sm={8} className="Quizimage">
+                <Link to="/comps/Quizzes"><Button bsSize="large" bsStyle="success" block>Push Quizzes</Button></Link>
+              </Col>           
+            </Col> 
           </Row>
         </Grid>
       </div>
@@ -105,6 +155,7 @@ export default class Features extends React.Component {
           <Row className="show-grid">
             <br />
             <Col sm={2} md={11}>
+              <br />
               <h1>Hello Student</h1>
             </Col>
             <Col sm={2} md={1}>
@@ -114,84 +165,108 @@ export default class Features extends React.Component {
             </Col>
           </Row>
           <Grid>
-          <Row>
-            <SplitButton
-      bsStyle="primary"
-      title={this.state.text}
-    >
-    <DropdownButton
-      bsStyle="default"
-      title="Computer System Engineering"
-      noCaret
-      >
-      <MenuItem eventKey="Prof1" onClick={() => this.changetext("Prof1")}>Prof1</MenuItem>
-      <MenuItem eventKey="2">Prof2</MenuItem>
-      <MenuItem eventKey="3">Prof3</MenuItem>
-    </DropdownButton>
-      <DropdownButton
-      bsStyle="default"
-      title="Probability and Statistics"
-      noCaret
-      >
-      <MenuItem eventKey="1">Prof4</MenuItem>
-      <MenuItem eventKey="2">Prof5</MenuItem>
-      <MenuItem eventKey="3">Prof6</MenuItem>
-    </DropdownButton>
-    <DropdownButton
-      bsStyle="default"
-      title="Elements of Software Construction"
-      noCaret
-      >
-      <MenuItem eventKey="1">Prof7</MenuItem>
-      <MenuItem eventKey="2">Prof8</MenuItem>
-      <MenuItem eventKey="3">Prof9</MenuItem>
-    </DropdownButton>
-    </SplitButton>
-          </Row>
+            <Row>
+              <SplitButton
+                  bsStyle="primary"
+                  title={this.state.text}>
+                <DropdownButton
+                    bsStyle="default"
+                    title="Computer System Engineering"
+                    noCaret>
+                  <MenuItem eventKey="Prof1" onClick={() => this.changetext("Prof1")}>Prof1</MenuItem>
+                  <MenuItem eventKey="2">Prof2</MenuItem>
+                  <MenuItem eventKey="3">Prof3</MenuItem>
+                </DropdownButton>
+                <DropdownButton
+                    bsStyle="default"
+                    title="Probability and Statistics"
+                    noCaret>
+                  <MenuItem eventKey="1">Prof4</MenuItem>
+                  <MenuItem eventKey="2">Prof5</MenuItem>
+                  <MenuItem eventKey="3">Prof6</MenuItem>
+                </DropdownButton>
+                <DropdownButton
+                    bsStyle="default"
+                    title="Elements of Software Construction"
+                    noCaret>
+                  <MenuItem eventKey="1">Prof7</MenuItem>
+                  <MenuItem eventKey="2">Prof8</MenuItem>
+                  <MenuItem eventKey="3">Prof9</MenuItem>
+                </DropdownButton>
+              </SplitButton>
+            </Row>
           </Grid>
         </Grid>
-        <Grid>
+
         <Grid>
           <Row className="show-grid">
-            <Col sm={1} md={1}>
-            
-            </Col>
-            <Col sm={2} md={4}>
-            <MuiThemeProvider>
-              <Feedbackimage />
-            </MuiThemeProvider>
-            <br/>
-            <Grid>
-            <Grid>
-            <Grid>
-            <Col sm={3}>
-              <Link to="/comps/stuAnalysis"><Button bsSize="large" bsStyle="success" block>Give Feedback</Button></Link>
-            </Col>
-            </Grid>
-            </Grid>
-            </Grid>
-            </Col>
-            <Col sm={1}/>
-            <Col sm={2} md={4}>
-            <MuiThemeProvider>
-              <Askimage />
-            </MuiThemeProvider>
             <br />
-            <Grid>
-            <Grid>
-            <Grid>
-            <Col sm={3}>
-              <Link to="/comps/stuQuizzes"><Button bsSize="large" bsStyle="success" block>Ask a Question</Button></Link>
+            <br />
+            <Col sm={1} />
+            <Col sm={2} md={4}>
+              <MuiThemeProvider>
+              <br />
+              <br />
+              <br />
+                <Row>
+                  <Col md={12}>
+                    <Card>
+                      <CardHeader
+                          title="Give Feedback"
+                          subtitle="Send feedback to professor"
+                      />
+                      <br/>
+                      <Col>
+                        <Col sm={2} />
+                        <Image src= {feedback} rounded />
+                      </Col>
+                      <br />
+                      <br />
+                    </Card>
+                  </Col>
+                </Row>
+              </MuiThemeProvider>
+              <br/>
+              <Col sm={2} />
+              <Col sm={8} className="Quizimage">
+                <Link to="/comps/stuFeedback"><Button bsSize="large" bsStyle="success" block>Give Feedback</Button></Link>
+              </Col>           
             </Col>
-            </Grid>
-            </Grid>
-            </Grid>
+            <Col sm={2}/>
+            <Col sm={2} md={4}>
+              <MuiThemeProvider>
+                <br />
+                <br />
+                <br />
+                <Row>
+                  <Col md={12}>
+                    <Card>
+                      <CardHeader
+                          title="Ask Question"
+                          subtitle="Let the professor know your question"
+                      />
+                      <br/>
+                      <Col>
+                        <Col sm={3} />
+                        <Image src= {question} rounded />
+                      </Col>
+                      <br />
+                      <br />
+                    </Card>
+                  </Col>
+                </Row>
+              </MuiThemeProvider>
+              <br/>
+              <Col sm={2} />
+              <Col sm={8} className="Quizimage">
+                <Link to="/comps/Question"><Button bsSize="large" bsStyle="success" block>Ask Questions</Button></Link>
+              </Col>           
             </Col>
           </Row>
-        </Grid>
-        </Grid>
+        </Grid>  
       </div>
     );
+    
     return this.authorize=="student" ? jsx2 : jsx1;
 
   }

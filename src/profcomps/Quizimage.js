@@ -2,12 +2,13 @@ import React from 'react';
 import {Card, CardHeader} from 'material-ui';
 import {Button, Grid, Row, Col, Image} from "react-bootstrap";
 import Background from "./quiz.png";
+import './Quizimage.css';
 
 export default class Quizimage extends React.Component {
 
 	render() {
 		return (
-		    <Grid alignItems="center">
+		    <Grid >
 			   	<br />
 			   	<br />
 			   	<br />

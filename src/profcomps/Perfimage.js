@@ -8,7 +8,7 @@ export default class Perfimage extends React.Component {
 
 	render() {
 		return (
-		    <Grid alignItems="center">
+		    <Grid >
 			   	<br />
 			   	<br />
 			   	<br />

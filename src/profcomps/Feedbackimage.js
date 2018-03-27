@@ -2,16 +2,17 @@ import React from 'react';
 import {Card, CardHeader} from 'material-ui';
 import {Button, Grid, Row, Col, Image} from "react-bootstrap";
 import Background from "./feedback.png";
+import './Quizimage';
 
 export default class Feedbackimage extends React.Component {
 
 	render() {
 		return (
-		    <Grid alignItems="center">
+		    <Grid >
 			   	<br />
 			   	<br />
 			   	<br />
-			   	<Row className="Show-grid">
+			   	<Row>
 			   		<Col md={4}>
 						<Card>
 				   			<CardHeader
