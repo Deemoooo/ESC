@@ -22,6 +22,7 @@ ReactDOM.render(
       <Route path="/comps/Quizzes" component={Quizzes}></Route>
       <Route path="/comps/Feedback" component={Feedback}></Route>
       <Route path="/comps/Analysis" component={Analysis}></Route>
+
   </Router>,
 
   document.getElementById('root')

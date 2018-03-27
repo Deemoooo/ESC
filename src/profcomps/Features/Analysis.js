@@ -7,7 +7,7 @@ export default class Analysis extends React.Component {
     return (
     <div>
      <h1>Analysis here</h1>
-     <Link to="/profcomps"><button class="btn btn-success">Back</button></Link>
+     <Link to="/comps"><button class="btn btn-success">Back</button></Link>
     </div>
     );
   }

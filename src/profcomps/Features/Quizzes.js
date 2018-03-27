@@ -62,7 +62,7 @@ export default class Quizzes extends React.Component {
         <input type="text" value={this.state.new} onChange={(e) =>this.handleChange(e.target.value)} />
         <input type="submit" value="Submit" onClick={() => this.increment()} />
         <input type="submit" value="View question" onClick={() => this.show()} />
-        <Link to="/profcomps"><button class="btn btn-success">Back</button></Link>
+        <Link to="/comps"><button class="btn btn-success">Back</button></Link>
 
       </div>
     );
