@@ -65,7 +65,7 @@ export default class Features extends React.Component {
                     <Card>
                         <CardHeader
                             title="Review Feedback"
-                            subtitle="Check the feedback from students  "
+                            subtitle="Check the feedback from students"
                         />
                         <br/>
                         <Col>
@@ -200,7 +200,6 @@ export default class Features extends React.Component {
 
         <Grid>
           <Row className="show-grid">
-            <br />
             <br />
             <Col sm={1} />
             <Col sm={2} md={4}>

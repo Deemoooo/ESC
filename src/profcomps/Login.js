@@ -1,6 +1,7 @@
 import React from 'react';
 import {Card, CardActions, CardHeader, TextField} from 'material-ui';
 import {Button, Grid, Row, Col} from "react-bootstrap";
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {Link} from "react-router";
 import Background from "./bg.jpg";
 import "./Side.css"
@@ -19,20 +20,39 @@ export default class Login extends React.Component {
 	render() {
 		return (
 			<div>
-			<Row>
-			<Col sm={4}>
-		    <Grid>
-			   	<Row className="Show-grid">
-			   		<Col md={5}>
-						<Card elevation={20}>
-				   			<CardHeader
-				      			title="WELCOME BACK"
-				      			subtitle="Please login"
-				    		/>
-				    		<Grid>
-				    		<Grid>
-				    		<Grid>
-				    		<Grid>
+			<Grid>
+          <Row className="show-grid">
+            <br />
+            <br />
+            <Col sm={2} md={4}>
+              <MuiThemeProvider>
+                <br />
+                <br />
+                <br /> 
+                <Row>
+                </Row>
+              </MuiThemeProvider>
+              <br/>
+              <Col sm={2} />
+              <Col sm={8} className="Quizimage">
+              </Col>           
+            </Col>
+            <Col sm={2} md={4}>
+              <MuiThemeProvider>
+                <br />
+                <br />
+                <br />
+                <Row>
+                  <Col md={12}>
+                    <Card>
+                      <CardHeader
+                          title="Performance analysis"
+                          subtitle="Analyze student's performance"
+                      />
+                      <br/>
+                      <Col>
+                        <Col sm={2} />
+                          <Grid>
 				    			<h4>Username</h4>
 				    			<Grid>
 			        				<TextField
@@ -43,13 +63,7 @@ export default class Login extends React.Component {
 			       					</TextField>
 			        			</Grid>
 			        			</Grid>
-			        			</Grid>
-			        			</Grid>
-			        			</Grid>
-				    		<Grid>
-				    		<Grid>
-				    		<Grid>
-				    		<Grid>
+			        			<Grid>
 
 								<h4>Password</h4>
 						        <Grid>
@@ -60,32 +74,38 @@ export default class Login extends React.Component {
 						        	</TextField>
 						        	</Grid>
 			        			</Grid>
-			        			</Grid>
-			        			</Grid>
-						    	</Grid>
-				    		<CardActions>
-				    		<br/>
-				    			<Grid>
-				    			<Grid>
-				    			<Col md={2} >
-
-				    				<Link to="/comps" authorize={['prof']}><Button 
+                      </Col>
+                      <br />
+                      <br />
+                    </Card>
+                  </Col>
+                </Row>
+              </MuiThemeProvider>
+              <br/>
+              <Col sm={2} />
+              <Col sm={8} className="Quizimage">
+				<Link to="/comps" ><Button 
 				    				bsStyle="info" block>
-				    				Login</Button></Link>
-				    			</Col>
-				    		
-				    			</Grid>
-				    			</Grid>
-				    		</CardActions>
-				    		<br />
-				    		<br />
-				   		</Card>
-			   		</Col>
-			   		<Col sm={4} />
-				</Row>
-		    </Grid>
-		    </Col>
-		    </Row>
+				    				Login</Button></Link>              </Col>           
+            </Col>
+            <Col sm={2} md={4}>
+              <MuiThemeProvider>
+                <br />
+                <br />
+                <br />
+                <Row>
+                  <Col md={12}>
+                   
+                  </Col>
+                </Row>
+              </MuiThemeProvider>
+              <br/>
+              <Col sm={2} />
+              <Col sm={8} className="Quizimage">
+                </Col>           
+            </Col> 
+          </Row>
+        </Grid>
 		    </div>
 		    
 		);
